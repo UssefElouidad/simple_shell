@@ -53,8 +53,9 @@ int _myhelp(info_t *info)
 
 int _mycd(info_t *info)
 {
-	char *dir, buffer[1024],
-	char *oldpwd = getenv("OLDPWD"), *s = getcwd(buffer, 1024);
+	char *dir, buffer[1024];
+	char *oldpwd = getenv("OLDPWD");
+	char *s = getcwd(buffer, 1024);
 	int chdir_ret;
 
 	if (!s)
