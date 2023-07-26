@@ -51,33 +51,17 @@ int unset_alias(info_t *info, char *str)
  */
 int set_alias(info_t *info, char *str)
 {
-	char *equal_sign, *alias;
-	int ret;
+	char *p;
 
-	equal_sign = _strchr(str, '=');
-
-	if (!equal_sign)
+	p = _strchr(str, '=');
+	if (!p)
 		return (1);
+	if (!*++p)
+		return (unset_alias(info, str));
 
-	*equal_sign = '\0';
-
-	alias = str;
-	str = equal_sign + 1;
-
-	if (!*str)
-	{
-		return (unset_alias(info, alias));
-	}
-
-	unset_alias(info, alias);
-
-	ret = add_node_end(&(info->alias), alias, str);
-
-	*equal_sign = '=';
-
-	return (ret == NULL);
+	unset_alias(info, str);
+	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
-
 /**
  * print_alias - a function that prints an alias string
  * @node: the alias node

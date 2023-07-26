@@ -165,7 +165,7 @@ int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 
-/* toem_errors1.c */
+/* toem_errors2.c */
 int _erratoi(char *);
 void print_error(info_t *, char *);
 int print_d(int, int);
@@ -177,9 +177,10 @@ int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
+/* toem_builtin2.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
+list_t *add_node_end(list_t **head, const char *alias, int value);
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
