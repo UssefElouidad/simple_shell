@@ -68,7 +68,9 @@ void print_error(info_t *info, char *estr)
 int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = (fd == STDERR_FILENO) ? _eputchar : _putchar;
-	int count = 0;
+	int count = 0, i = 1;
+	int temp = input, digit = input / divisor;
+	int num_digits = 0, divisor = 1;
 
 	if (input < 0)
 	{
@@ -80,8 +82,6 @@ int print_d(int input, int fd)
 	if (input == 0)
 		return (__putchar('0') + 1);
 
-	int temp = input;
-	int num_digits = 0;
 
 	while (temp != 0)
 	{
@@ -91,12 +91,9 @@ int print_d(int input, int fd)
 
 	while (num_digits--)
 	{
-		int divisor = 1;
 
-		for (int i = 1; i <= num_digits; i++)
+		for (; i <= num_digits; i++)
 			divisor *= 10;
-
-		int digit = input / divisor;
 
 		__putchar('0' + digit);
 		count++;
@@ -158,4 +155,3 @@ void remove_comments(char *buf)
 		}
 	}
 }
-
