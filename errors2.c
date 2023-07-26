@@ -68,9 +68,9 @@ void print_error(info_t *info, char *estr)
 int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = (fd == STDERR_FILENO) ? _eputchar : _putchar;
-	int count = 0, i = 1;
+	int count = 0, i = 1, divisor = 1;
 	int temp = input, digit = input / divisor;
-	int num_digits = 0, divisor = 1;
+	int num_digits = 0;
 
 	if (input < 0)
 	{

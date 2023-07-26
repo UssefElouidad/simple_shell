@@ -1,4 +1,4 @@
-include "shell.h"
+#include "shell.h"
 
 /**
  * _strncpy - work exactly like strncpy.
@@ -17,7 +17,6 @@ char *_strncpy(char *dest, char *src, int n)
 		*(dest + i) = '\0';
 	return (dest);
 }
-#include"main.h"
 
 /**
  * _strncat - fonction that appends src string to the dest string.
@@ -41,7 +40,7 @@ char *_strncat(char *dest, char *src, int n)
 	*(dest + ld) = '\0';
 	return (dest);
 }
-# include "main.h"
+
 /**
  * _strchr - a function that locates a character in a string.
  * @c: character ito locate.
