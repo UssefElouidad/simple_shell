@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * _myhistory - prints the history list, a command by line
  * precede with line numbers, starting at 0.
