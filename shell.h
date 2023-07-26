@@ -148,11 +148,9 @@ char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
-/* toem_tokenizer.c */
-static int count_words(char *, char *);
-static char **allocate_memory(int);
-static int split_string(char *, char *, char **);
+/* toem_tokenizer.c*/
 char **strtow(char *, char *);
+char **strtow2(char *, char);
 
 /* toem_realloc.c */
 char *_memset(char *, char, unsigned int);
